@@ -1,0 +1,45 @@
+<div class="card my-2">
+  <img src="{{ task.picture_url }}" class="card-img-top img-fluid img-thumbnail" (click)="openEditDialogBox(editdialogbox)">
+  <div class="card-body">
+    <h5 class="card-title">{{ task.title }}</h5>
+    <p class="card-text">{{ task.content }}</p>
+    <div *ngIf="task.link" class="text-right">
+      <hr />
+      <a  href="https://{{ task.link.url }}" target="_">{{ task.link.label }}</a>
+    </div>
+  </div>
+  <div class="card-footer">
+    <p class="card-text text-right">
+      <a (click)="remove()" class="btn btn-sm btn-outline-primary">Supprimer</a>
+    </p>
+  </div>
+</div>
+<ng-template #editdialogbox let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Mettre à jour</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="name">Titre</label>
+      <input [(ngModel)]="title" type="text" name="title" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input [(ngModel)]="content" type="text" name="description" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">Nom du lien</label>
+      <input [(ngModel)]="link_label" type="text" name="description" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">URL du lien</label>
+      <input [(ngModel)]="link_url" type="text" name="description" class="form-control">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('update')">Mettre à jour</button>
+  </div>
+</ng-template>

@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="text-center">
+    <i (click)="taskboard.add()" class="fas fa-2x fa-plus-circle"></i>
+  </div>
+  <br />
+  <div class="row">
+      <app-task *ngFor="let task of taskboard.tasks; let index = index" (remove)="taskboard.remove(index)" [task]="task" class="col-lg-3"></app-task>
+  </div>
+</div>

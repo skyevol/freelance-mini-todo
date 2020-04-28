@@ -3,8 +3,10 @@
 
 **email**: contact-hiring@skyevol.com
 
+<a href="https://www.malt.fr/profile/skyevol" target='_'>Mon Profil Malt</a>
 
-[Mon Profil Malt](https://www.malt.fr/profile/skyevol)
+
+<a href="https://skyevol.github.io/freelance-mini-todo/" target='_'>Voir le résultat de cette mini-application</a>
 
 
 ## Mes recherches
